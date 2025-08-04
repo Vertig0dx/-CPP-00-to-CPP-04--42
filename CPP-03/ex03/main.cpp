@@ -1,0 +1,92 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmiguel- <lmiguel-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/13 19:57:24 by lmiguel-          #+#    #+#             */
+/*   Updated: 2024/12/12 14:51:08 by lmiguel-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
+
+int main (void)
+{
+	{
+		std::cout << std::endl;
+		std::cout << "INITIATING CONSTRUCTOR AND DESTRUCTOR TESTS" << std::endl;
+		std::cout << std::endl;
+		ClapTrap TestTrap1;
+		ClapTrap TestTrap2	( "TestTrap2" );
+		ClapTrap TestTrap3;
+		TestTrap3 = TestTrap2;
+		ClapTrap TestTrap4 (TestTrap3);
+		ScavTrap TestTrap5;
+		ScavTrap TestTrap6	( "TestTrap6" );
+		ScavTrap TestTrap7;
+		TestTrap7 = TestTrap6;
+		ScavTrap TestTrap8 (TestTrap7);
+		FragTrap TestTrap9;
+		FragTrap TestTrap10	( "TestTrap10" );
+		FragTrap TestTrap11;
+		TestTrap11 = TestTrap10;
+		FragTrap TestTrap12 (TestTrap11);
+		DiamondTrap TestTrap13;
+		DiamondTrap TestTrap14	( "TestTrap14" );
+		DiamondTrap TestTrap15;
+		TestTrap15 = TestTrap14;
+		DiamondTrap TestTrap16 (TestTrap15);
+	}
+	std::cout << std::endl;
+	std::cout << "ENDING CONSTRUCTOR AND DESTRUCTOR TESTS" << std::endl;
+	std::cout << std::endl;
+	{
+		std::cout << std::endl;
+		std::cout << "INITIATING NO ENERGY TESTS" << std::endl;
+		std::cout << std::endl;
+		ClapTrap 	G0DTRAP		("G0DTRAP");
+		ScavTrap 	CharlieTrap	("CharlieTrap");
+		FragTrap 	SgtTrap		("SgtTrap");
+		DiamondTrap BlingTrap	("BlingTrap");
+		G0DTRAP.takeDamage(200);
+		G0DTRAP.beRepaired(0);
+		G0DTRAP.attack("CharlieTrap");
+		G0DTRAP.takeDamage(200);
+		CharlieTrap.takeDamage(200);
+		CharlieTrap.beRepaired(0);
+		CharlieTrap.attack("CharlieTrap");
+		CharlieTrap.takeDamage(200);
+		SgtTrap.takeDamage(200);
+		SgtTrap.beRepaired(0);
+		SgtTrap.attack("CharlieTrap");
+		SgtTrap.takeDamage(200);
+		BlingTrap.takeDamage(200);
+		BlingTrap.beRepaired(0);
+		BlingTrap.attack("CharlieTrap");
+		BlingTrap.takeDamage(200);
+	}
+	std::cout << std::endl;
+	std::cout << "ENDING NO ENERGY TESTS" << std::endl;
+	std::cout << std::endl;
+	{
+	std::cout << std::endl;
+	std::cout << "INITIATING UNIQUE FUNCTION TESTS" << std::endl;
+	std::cout << std::endl;
+	ScavTrap CharlieTrap("CharlieTrap");
+	FragTrap SgtTrap("SgtTrap");
+	DiamondTrap BlingTrap("BlingTrap");
+	CharlieTrap.guardGate();
+	SgtTrap.highFivesGuys();
+	BlingTrap.getHp();
+	}
+	std::cout << std::endl;
+	std::cout << "ENDING UNIQUE FUNCTION TESTS" << std::endl;
+	std::cout << std::endl;
+	return (0);
+}
+
